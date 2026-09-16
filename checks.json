@@ -1,0 +1,671 @@
+{
+  "name": "deckproof-checks",
+  "description": "The checks Deckproof explains publicly, with the standard or law each one points at. English and German.",
+  "source": "https://deckproof.dev/checks",
+  "license": "CC-BY-4.0",
+  "generated": "2026-09-15",
+  "total_finding_ids": 84,
+  "explained_here": 44,
+  "checks": [
+    {
+      "id": "A-01",
+      "category": "security",
+      "severity": "critical",
+      "standard": "OWASP A01:2025",
+      "slug": "supabase-rls-anon-read",
+      "en": {
+        "title": "Anyone can read your database",
+        "what": "Your Supabase table answers to anyone who asks, no login needed. That is your users' data, readable by strangers. We ask once, read-only, and report what came back."
+      },
+      "de": {
+        "title": "Jeder kann deine Datenbank lesen",
+        "what": "Deine Supabase-Tabelle antwortet jedem, der fragt, ganz ohne Login. Das sind die Daten deiner Nutzer, lesbar für Fremde. Wir fragen einmal, rein lesend, und berichten, was zurückkam."
+      }
+    },
+    {
+      "id": "A-04",
+      "category": "security",
+      "severity": "critical",
+      "standard": "OWASP A01:2025",
+      "slug": "open-firebase-db",
+      "en": {
+        "title": "Your Firebase database is open",
+        "what": "Your Firebase data can be read without logging in."
+      },
+      "de": {
+        "title": "Deine Firebase-Datenbank ist offen",
+        "what": "Deine Firebase-Daten lassen sich ohne Anmeldung lesen."
+      }
+    },
+    {
+      "id": "S-01",
+      "category": "security",
+      "severity": "critical",
+      "standard": "CWE-798",
+      "slug": "service-role-key-exposed",
+      "en": {
+        "title": "Your master key is inside the page",
+        "what": "The Supabase service key sits in your site's code. Whoever reads it owns your whole database, every lock ignored."
+      },
+      "de": {
+        "title": "Dein Generalschlüssel steht in der Seite",
+        "what": "Der Supabase Service Key liegt im Code deiner Seite. Wer ihn liest, hat deine ganze Datenbank, alle Schlösser wirkungslos."
+      }
+    },
+    {
+      "id": "S-02",
+      "category": "security",
+      "severity": "critical",
+      "standard": "CWE-798",
+      "slug": "secret-key-in-bundle",
+      "en": {
+        "title": "A secret key is in your page",
+        "what": "We look through your site's code for keys (Stripe, OpenAI, AWS, GitHub) that should never be public. With them, someone can spend your money or read your data."
+      },
+      "de": {
+        "title": "Ein geheimer Schlüssel steht in deiner Seite",
+        "what": "Wir durchsuchen den Code deiner Seite nach Schlüsseln (Stripe, OpenAI, AWS, GitHub), die nie öffentlich sein dürfen. Damit kann jemand dein Geld ausgeben oder deine Daten lesen."
+      }
+    },
+    {
+      "id": "S-04",
+      "category": "security",
+      "severity": "critical",
+      "standard": "CWE-538",
+      "slug": "env-file-exposed",
+      "en": {
+        "title": "Your settings file is downloadable",
+        "what": "The .env file, with passwords and keys, is served like any other page."
+      },
+      "de": {
+        "title": "Deine Konfigurationsdatei ist herunterladbar",
+        "what": "Die .env-Datei mit Passwörtern und Schlüsseln wird ausgeliefert wie jede andere Seite."
+      }
+    },
+    {
+      "id": "S-05",
+      "category": "security",
+      "severity": "high",
+      "standard": "CWE-538",
+      "slug": "git-directory-exposed",
+      "en": {
+        "title": "Your code history is public",
+        "what": "The .git folder is reachable, so your entire source code, past versions included, can be downloaded."
+      },
+      "de": {
+        "title": "Deine Code-Historie ist öffentlich",
+        "what": "Der Ordner .git ist erreichbar, damit lässt sich dein ganzer Quellcode samt alter Versionen herunterladen."
+      }
+    },
+    {
+      "id": "S-06",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-540",
+      "slug": "source-maps-in-prod",
+      "en": {
+        "title": "Your source code ships with the site",
+        "what": "Source maps let anyone read your code, comments and internal links."
+      },
+      "de": {
+        "title": "Dein Quellcode wird mitgeliefert",
+        "what": "Source Maps lassen jeden deinen Code, deine Kommentare und interne Adressen lesen."
+      }
+    },
+    {
+      "id": "A-05",
+      "category": "security",
+      "severity": "high",
+      "standard": "CWE-284",
+      "slug": "storage-listable",
+      "en": {
+        "title": "Your file storage is listable",
+        "what": "Supabase Storage answers an anonymous request for its bucket list, and lets a stranger list the files inside. Public buckets serve every file to anyone with the link."
+      },
+      "de": {
+        "title": "Deine Dateiablage ist auflistbar",
+        "what": "Supabase Storage beantwortet eine anonyme Anfrage nach der Bucket-Liste und lässt Fremde die Dateien darin auflisten. Öffentliche Buckets liefern jede Datei an jeden mit Link."
+      }
+    },
+    {
+      "id": "A-06",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-200",
+      "slug": "supabase-graphql-introspection",
+      "en": {
+        "title": "Your database hands out its own map",
+        "what": "The Supabase GraphQL endpoint answers an anonymous introspection query and lists every table and column. We use the answer to test the tables it names, read-only."
+      },
+      "de": {
+        "title": "Deine Datenbank verteilt ihren eigenen Bauplan",
+        "what": "Der GraphQL-Endpunkt von Supabase beantwortet eine anonyme Abfrage und listet jede Tabelle und Spalte. Wir nutzen die Antwort, um genau diese Tabellen zu prüfen, rein lesend."
+      }
+    },
+    {
+      "id": "A-07",
+      "category": "security",
+      "severity": "low",
+      "standard": "CWE-287",
+      "slug": "unconfirmed-signup",
+      "en": {
+        "title": "Accounts without email confirmation",
+        "what": "Sign-up is open and \"confirm email\" is off, so a script can create thousands of accounts, including with other people's addresses."
+      },
+      "de": {
+        "title": "Konten ohne E-Mail-Bestätigung",
+        "what": "Die Registrierung ist offen und die Bestätigung per E-Mail ist aus. Ein Skript kann tausende Konten anlegen, auch mit fremden Adressen."
+      }
+    },
+    {
+      "id": "S-03",
+      "category": "security",
+      "severity": "high",
+      "standard": "CWE-798",
+      "slug": "public-prefixed-secrets",
+      "en": {
+        "title": "Server-only variable names in the page",
+        "what": "Your build tool copies every VITE_ or NEXT_PUBLIC_ variable into the page. When one is called SERVICE_ROLE or SECRET, its value is public too."
+      },
+      "de": {
+        "title": "Server-Variablennamen in der Seite",
+        "what": "Dein Build-Werkzeug kopiert jede Variable mit VITE_ oder NEXT_PUBLIC_ in die Seite. Heißt eine davon SERVICE_ROLE oder SECRET, ist auch ihr Wert öffentlich."
+      }
+    },
+    {
+      "id": "S-08",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-200",
+      "slug": "openapi-public",
+      "en": {
+        "title": "Your API description is public",
+        "what": "An openapi.json or swagger.json lists every route and parameter of your backend for anyone to read."
+      },
+      "de": {
+        "title": "Deine API-Beschreibung ist öffentlich",
+        "what": "Eine openapi.json oder swagger.json listet jede Route und jeden Parameter deines Backends zum Mitlesen."
+      }
+    },
+    {
+      "id": "A-03",
+      "category": "security",
+      "severity": "high",
+      "standard": "CWE-359",
+      "slug": "sensitive-columns-public",
+      "en": {
+        "title": "Personal data is publicly readable",
+        "what": "A readable table contains fields like email, phone or password hashes. That is the kind of leak that gets reported to the authorities."
+      },
+      "de": {
+        "title": "Personenbezogene Daten sind öffentlich lesbar",
+        "what": "Eine lesbare Tabelle enthält Felder wie E-Mail, Telefon oder Passwort-Hashes. Genau solche Lecks landen bei der Aufsichtsbehörde."
+      }
+    },
+    {
+      "id": "C-02",
+      "category": "security",
+      "severity": "high",
+      "standard": "CWE-942",
+      "slug": "cors-misconfiguration",
+      "en": {
+        "title": "Other sites can read your logged-in data",
+        "what": "A sharing setting (CORS) echoes any origin and allows credentials, so any website can ask your backend for a visitor's data while they are logged in. A plain \"*\" for public data is fine and is not reported."
+      },
+      "de": {
+        "title": "Andere Seiten können die Daten deiner angemeldeten Nutzer lesen",
+        "what": "Eine Freigabe-Einstellung (CORS) spiegelt jede Herkunft und erlaubt Zugangsdaten, also kann jede fremde Website dein Backend nach den Daten einer angemeldeten Besucherin fragen. Ein schlichtes \"*\" für öffentliche Daten ist in Ordnung und wird nicht gemeldet."
+      }
+    },
+    {
+      "id": "C-04",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-200",
+      "slug": "graphql-introspection",
+      "en": {
+        "title": "Your API hands out its own map",
+        "what": "GraphQL introspection is on, so anyone can ask your API to list everything it can do."
+      },
+      "de": {
+        "title": "Deine API verteilt ihren eigenen Bauplan",
+        "what": "GraphQL-Introspection ist an, jeder kann deine API auffordern, alles aufzulisten, was sie kann."
+      }
+    },
+    {
+      "id": "T-02",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-693",
+      "slug": "missing-csp",
+      "en": {
+        "title": "No Content-Security-Policy",
+        "what": "A setting that stops injected scripts. Without it a bad script can run as if it were your page."
+      },
+      "de": {
+        "title": "Keine Content-Security-Policy",
+        "what": "Eine Einstellung, die eingeschleuste Skripte stoppt. Ohne sie läuft fremder Code wie deine eigene Seite."
+      }
+    },
+    {
+      "id": "T-01",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-319",
+      "slug": "missing-hsts",
+      "en": {
+        "title": "Secure connection not enforced",
+        "what": "Browsers are not told to always use HTTPS, so a first visit can be intercepted."
+      },
+      "de": {
+        "title": "Sichere Verbindung nicht erzwungen",
+        "what": "Browsern wird nicht gesagt, dass sie immer HTTPS nutzen sollen, der erste Besuch lässt sich abfangen."
+      }
+    },
+    {
+      "id": "T-03",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-1021",
+      "slug": "clickjacking",
+      "en": {
+        "title": "Your page can be framed",
+        "what": "Another site can wrap your login page inside theirs and trick your users into clicking."
+      },
+      "de": {
+        "title": "Deine Seite lässt sich einrahmen",
+        "what": "Eine fremde Seite kann deine Anmeldeseite in sich einbetten und deine Nutzer zu Klicks verleiten."
+      }
+    },
+    {
+      "id": "T-08",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-1004",
+      "slug": "insecure-cookies",
+      "en": {
+        "title": "Session cookie without safety flags",
+        "what": "A cookie that looks like a login or session token is missing the flags that keep it off plain connections and away from scripts. Analytics cookies are reported separately as low."
+      },
+      "de": {
+        "title": "Sitzungs-Cookie ohne Schutzflaggen",
+        "what": "Ein Cookie, das nach Login oder Sitzung aussieht, hat nicht die Flaggen, die es von unverschlüsselten Verbindungen und von Skripten fernhalten. Analyse-Cookies melden wir getrennt als niedrig."
+      }
+    },
+    {
+      "id": "T-09",
+      "category": "security",
+      "severity": "low",
+      "standard": "CWE-16",
+      "slug": "permissions-policy",
+      "en": {
+        "title": "No Permissions-Policy",
+        "what": "Camera, microphone, location and payment stay switched on for your pages and everything embedded in them."
+      },
+      "de": {
+        "title": "Keine Permissions-Policy",
+        "what": "Kamera, Mikrofon, Standort und Bezahlen bleiben für deine Seiten und alles darin Eingebettete eingeschaltet."
+      }
+    },
+    {
+      "id": "DE-SEC-01",
+      "category": "security",
+      "severity": "critical",
+      "standard": "GDPR Art. 32",
+      "slug": "no-https",
+      "en": {
+        "title": "No padlock",
+        "what": "Not served over HTTPS, or the certificate is expired or untrusted. Fix this first, everything else waits."
+      },
+      "de": {
+        "title": "Kein Schloss",
+        "what": "Nicht über HTTPS ausgeliefert, oder das Zertifikat ist abgelaufen oder nicht vertrauenswürdig. Das zuerst, alles andere wartet."
+      }
+    },
+    {
+      "id": "DE-IMP-01",
+      "category": "legal",
+      "severity": "high",
+      "standard": "§5 DDG",
+      "slug": "impressum-present",
+      "en": {
+        "title": "No Impressum found",
+        "what": "German law expects a provider page on commercial sites (§5 DDG). We say what we found and link the rule. General information, not legal advice."
+      },
+      "de": {
+        "title": "Kein Impressum gefunden",
+        "what": "Bei geschäftsmäßigen Websites erwartet das deutsche Recht eine Anbieterkennzeichnung (§5 DDG). Wir sagen, was wir gefunden haben, und verlinken die Regel. Allgemeine Information, keine Rechtsberatung."
+      }
+    },
+    {
+      "id": "DE-PRIV-01",
+      "category": "legal",
+      "severity": "high",
+      "standard": "Art. 13 DSGVO",
+      "slug": "privacy-policy-present",
+      "en": {
+        "title": "No privacy notice found",
+        "what": "EU law expects one (Art. 13 GDPR). We look for a linked page under the usual names. General information, not legal advice."
+      },
+      "de": {
+        "title": "Keine Datenschutzerklärung gefunden",
+        "what": "Das EU-Recht erwartet eine (Art. 13 DSGVO). Wir suchen unter den üblichen Adressen und in den Links der Seite. Allgemeine Information, keine Rechtsberatung."
+      }
+    },
+    {
+      "id": "DE-PRIV-04",
+      "category": "legal",
+      "severity": "high",
+      "standard": "Art. 13 DSGVO",
+      "slug": "policy-vs-reality",
+      "en": {
+        "title": "Your privacy notice does not mention services you use",
+        "what": "We compare the outside services your site actually loads (analytics, fonts, maps) with what your privacy notice names."
+      },
+      "de": {
+        "title": "Deine Datenschutzerklärung nennt Dienste nicht, die du nutzt",
+        "what": "Wir vergleichen die Dienste, die deine Seite tatsächlich lädt (Analyse, Schriften, Karten), mit dem, was deine Datenschutzerklärung nennt."
+      }
+    },
+    {
+      "id": "DE-3P-01",
+      "category": "legal",
+      "severity": "high",
+      "standard": "LG München I",
+      "slug": "google-fonts",
+      "en": {
+        "title": "Fonts loaded from Google",
+        "what": "Every visitor's address is sent to Google on each visit; often flagged since a 2022 Munich court ruling. General information."
+      },
+      "de": {
+        "title": "Schriften von Google geladen",
+        "what": "Die Adresse jeder Besucherin geht bei jedem Aufruf an Google; seit einem Münchner Urteil von 2022 ein häufiges Abmahnthema. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-CK-03",
+      "category": "legal",
+      "severity": "high",
+      "standard": "§25 TDDDG",
+      "slug": "trackers-without-consent",
+      "en": {
+        "title": "Trackers without a consent tool",
+        "what": "Analytics or ad pixels are in the page but no consent manager is, so they run for every visitor without the choice EU law expects (§25 TDDDG). General information."
+      },
+      "de": {
+        "title": "Tracker ohne Einwilligungslösung",
+        "what": "Analyse- oder Werbe-Pixel liegen in der Seite, eine Einwilligungslösung aber nicht, also laufen sie für jede Besucherin ohne die Wahl, die das EU-Recht vorsieht (§25 TDDDG). Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-3P-03",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "§25 TDDDG",
+      "slug": "third-party-embeds",
+      "en": {
+        "title": "Embeds that phone home without consent",
+        "what": "YouTube, Google Maps or social embeds load third-party code and set cookies on page load. We check for them when no consent tool is present."
+      },
+      "de": {
+        "title": "Einbettungen, die ohne Einwilligung nach Hause funken",
+        "what": "YouTube, Google Maps oder Social-Einbettungen laden fremden Code und setzen Cookies schon beim Aufruf. Wir prüfen darauf, wenn keine Einwilligungslösung da ist."
+      }
+    },
+    {
+      "id": "DE-A11Y-01",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "§14 BFSG",
+      "slug": "bfsg-statement",
+      "en": {
+        "title": "No accessibility statement",
+        "what": "If you sell online, German law (BFSG) expects an accessibility statement. We check whether one is linked. General information."
+      },
+      "de": {
+        "title": "Keine Erklärung zur Barrierefreiheit",
+        "what": "Wer online verkauft, für den erwartet das BFSG eine Erklärung zur Barrierefreiheit. Wir prüfen, ob eine verlinkt ist. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-A11Y-02",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "WCAG 1.4.3 / BFSG",
+      "slug": "contrast",
+      "en": {
+        "title": "Text below the required contrast",
+        "what": "We measure every piece of text against the colour actually painted behind it. WCAG asks for 4.5:1 on normal text, 3:1 on large text. Needs a real browser, so it runs in the deep scan. General information."
+      },
+      "de": {
+        "title": "Text unter dem nötigen Kontrast",
+        "what": "Wir messen jeden Text gegen die Farbe, die tatsächlich dahinter liegt. Die WCAG verlangt 4,5:1 bei normalem Text und 3:1 bei großem. Das braucht einen echten Browser, läuft also im Tiefenscan. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-A11Y-03",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "WCAG 4.1.2 / BFSG",
+      "slug": "control-name",
+      "en": {
+        "title": "Buttons or links without a name",
+        "what": "An icon button with no label is announced as \"button\" and nothing else. We check every control for a name a screen reader can read. General information."
+      },
+      "de": {
+        "title": "Bedienelemente ohne Namen",
+        "what": "Eine Schaltfläche, die nur aus einem Symbol besteht, wird ohne Beschriftung als \"Schaltfläche\" vorgelesen und sonst nichts. Wir prüfen jedes Bedienelement auf einen Namen, den ein Screenreader vorlesen kann. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-A11Y-04",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "WCAG 3.3.2 / BFSG",
+      "slug": "field-label",
+      "en": {
+        "title": "Form fields without a label",
+        "what": "A placeholder is not a label: it vanishes as soon as someone types. We check whether every field has a label that assistive technology can use. General information."
+      },
+      "de": {
+        "title": "Formularfelder ohne Beschriftung",
+        "what": "Ein Platzhaltertext ist keine Beschriftung, er verschwindet beim Tippen. Wir prüfen, ob jedes Feld eine Beschriftung hat, die Hilfsmittel auslesen können. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-A11Y-05",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "WCAG 2.4.7 / 2.4.1 / BFSG",
+      "slug": "keyboard-focus",
+      "en": {
+        "title": "Keyboard focus invisible, or no way past the navigation",
+        "what": "We tab through the first controls and check whether anything visibly changes, and whether there is a skip link or a landmark structure to jump past the menu. General information."
+      },
+      "de": {
+        "title": "Fokus unsichtbar oder kein Weg an der Navigation vorbei",
+        "what": "Wir gehen mit der Tabulatortaste durch die ersten Bedienelemente und prüfen, ob sich sichtbar etwas ändert, und ob es einen Sprunglink oder eine Landmarkenstruktur gibt, um das Menü zu überspringen. Allgemeine Information."
+      }
+    },
+    {
+      "id": "DE-A11Y-06",
+      "category": "legal",
+      "severity": "low",
+      "standard": "WCAG 2.1 AA / BFSG",
+      "slug": "a11y-other",
+      "en": {
+        "title": "Other machine-detectable accessibility failures",
+        "what": "Everything else axe-core finds against WCAG 2.1 AA, reported as one row with the rule names so the report stays readable. General information."
+      },
+      "de": {
+        "title": "Weitere maschinell erkennbare Barrieren",
+        "what": "Alles Weitere, was axe-core gegen WCAG 2.1 AA findet, zusammengefasst in einer Zeile mit den Regelnamen, damit der Bericht lesbar bleibt. Allgemeine Information."
+      }
+    },
+    {
+      "id": "US-OPT-01",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "CCPA",
+      "slug": "ccpa-opt-out",
+      "en": {
+        "title": "No US opt-out link",
+        "what": "If US ad-tech is present, California law expects a \"Do Not Sell / Your Privacy Choices\" link. We check whether one exists."
+      },
+      "de": {
+        "title": "Kein US-Opt-out-Link",
+        "what": "Wenn US-Werbetechnik eingebunden ist, erwartet kalifornisches Recht einen \"Do Not Sell / Your Privacy Choices\"-Link. Wir prüfen, ob es einen gibt."
+      }
+    },
+    {
+      "id": "Q-01",
+      "category": "quality",
+      "severity": "high",
+      "standard": "SEO",
+      "slug": "noindex",
+      "en": {
+        "title": "Search engines are told to stay away",
+        "what": "A noindex tag or header, or a robots.txt that blocks everything, is still on. Preview builds ship with it; a launched site with it is invisible."
+      },
+      "de": {
+        "title": "Suchmaschinen sollen wegbleiben",
+        "what": "Ein noindex in der Seite oder im Header, oder eine robots.txt, die alles sperrt, ist noch aktiv. Vorschau-Builds haben das mit Absicht; eine veröffentlichte Seite damit ist unsichtbar."
+      }
+    },
+    {
+      "id": "Q-05c",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "SEO",
+      "slug": "default-title",
+      "en": {
+        "title": "Title is still the template default",
+        "what": "The tab reads \"Vite + React\" or \"Lovable App\". That is the headline of your search result."
+      },
+      "de": {
+        "title": "Titel ist noch die Vorlage",
+        "what": "Im Tab steht \"Vite + React\" oder \"Lovable App\". Das ist die Überschrift deines Suchergebnisses."
+      }
+    },
+    {
+      "id": "Q-12",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "Reliability",
+      "slug": "localhost-in-bundle",
+      "en": {
+        "title": "Localhost addresses in the shipped code",
+        "what": "The code still calls an address that only exists on the developer's machine, so a feature silently fails for every visitor."
+      },
+      "de": {
+        "title": "Localhost-Adressen im ausgelieferten Code",
+        "what": "Der Code ruft noch eine Adresse auf, die es nur auf dem Rechner der Entwicklerin gibt, also scheitert eine Funktion still bei jeder Besucherin."
+      }
+    },
+    {
+      "id": "Q-05a",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "SEO",
+      "slug": "title-and-meta",
+      "en": {
+        "title": "Missing page title or description",
+        "what": "Search results and browser tabs show the bare address instead of your name."
+      },
+      "de": {
+        "title": "Titel oder Beschreibung fehlen",
+        "what": "Suchergebnisse und Browser-Tabs zeigen die nackte Adresse statt deines Namens."
+      }
+    },
+    {
+      "id": "Q-09",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "SEO",
+      "slug": "client-only-render",
+      "en": {
+        "title": "Google sees an empty page",
+        "what": "Your site only appears after code runs in the browser, so search engines and link previews see nothing."
+      },
+      "de": {
+        "title": "Google sieht eine leere Seite",
+        "what": "Deine Seite entsteht erst, wenn Code im Browser läuft, Suchmaschinen und Link-Vorschauen sehen also nichts."
+      }
+    },
+    {
+      "id": "Q-10c",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "WCAG 1.1.1",
+      "slug": "image-alt",
+      "en": {
+        "title": "Images without descriptions",
+        "what": "Screen readers and Google cannot tell what your images show. An accessibility basic (WCAG)."
+      },
+      "de": {
+        "title": "Bilder ohne Beschreibung",
+        "what": "Screenreader und Google können nicht erkennen, was deine Bilder zeigen. Eine Grundregel der Barrierefreiheit (WCAG)."
+      }
+    },
+    {
+      "id": "Q-10a",
+      "category": "quality",
+      "severity": "low",
+      "standard": "WCAG 3.1.1",
+      "slug": "html-lang",
+      "en": {
+        "title": "No language set",
+        "what": "Your page does not say which language it is in, which confuses screen readers and translators."
+      },
+      "de": {
+        "title": "Keine Sprache gesetzt",
+        "what": "Deine Seite sagt nicht, in welcher Sprache sie ist, das verwirrt Screenreader und Übersetzer."
+      }
+    },
+    {
+      "id": "Q-10d",
+      "category": "quality",
+      "severity": "low",
+      "standard": "WCAG 3.1.1",
+      "slug": "html-lang-wrong",
+      "en": {
+        "title": "The page says it is in the wrong language",
+        "what": "The page declares one language and is written in another, so a screen reader reads it with the wrong pronunciation. Builders trained on English keep lang=\"en\" even when you ask for another language."
+      },
+      "de": {
+        "title": "Die Seite gibt die falsche Sprache an",
+        "what": "Die Seite deklariert eine Sprache und ist in einer anderen geschrieben, ein Screenreader liest sie also mit der falschen Aussprache vor. Builder, die auf Englisch trainiert sind, lassen lang=\"en\" stehen, auch wenn du eine andere Sprache verlangst."
+      }
+    },
+    {
+      "id": "Q-07",
+      "category": "quality",
+      "severity": "low",
+      "standard": "SEO",
+      "slug": "robots-txt",
+      "en": {
+        "title": "No robots.txt or sitemap",
+        "what": "Two small files that tell search engines where to look. We also check for a canonical link, a favicon and an <h1>."
+      },
+      "de": {
+        "title": "Keine robots.txt oder Sitemap",
+        "what": "Zwei kleine Dateien, die Suchmaschinen sagen, wo sie schauen sollen. Wir prüfen außerdem den Canonical-Link, das Favicon und eine <h1>."
+      }
+    },
+    {
+      "id": "Q-13",
+      "category": "quality",
+      "severity": "medium",
+      "standard": "Web performance",
+      "slug": "js-weight",
+      "en": {
+        "title": "Too much JavaScript",
+        "what": "More than a couple of megabytes of script on first load takes seconds to parse on a phone. We weigh what the page really downloads."
+      },
+      "de": {
+        "title": "Zu viel JavaScript",
+        "what": "Mehr als ein paar Megabyte Skript beim ersten Laden brauchen auf dem Handy Sekunden. Wir wiegen, was die Seite wirklich lädt."
+      }
+    }
+  ]
+}
