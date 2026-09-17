@@ -2,7 +2,7 @@
 
 The checks [Deckproof](https://deckproof.dev) explains publicly, as machine-readable data: what each one looks for, in English and German, and which standard or law it points at.
 
-44 checks here, out of 84 distinct findings the scanner can emit. The rest are variants and "we looked and found nothing" rows that are not worth their own explanation.
+49 checks here, out of 89 distinct findings the scanner can emit. The rest are variants and "we looked and found nothing" rows that are not worth their own explanation.
 
 ## Why this exists
 
@@ -16,8 +16,8 @@ This file is the list of things we check for, written so a person can read it an
 
 ```json
 {
-  "total_finding_ids": 84,
-  "explained_here": 44,
+  "total_finding_ids": 89,
+  "explained_here": 49,
   "checks": [
     {
       "id": "A-01",
@@ -47,7 +47,7 @@ Nothing in here is a promise of completeness. The set of things that can be wron
 
 ## Kurzfassung auf Deutsch
 
-Das sind die Prüfpunkte, die Deckproof öffentlich erklärt, als maschinenlesbare Datei: was geprüft wird, auf Deutsch und Englisch, und auf welche Norm oder welchen Paragraphen sich der Punkt jeweils bezieht. 44 Einträge von insgesamt 84 möglichen Befunden.
+Das sind die Prüfpunkte, die Deckproof öffentlich erklärt, als maschinenlesbare Datei: was geprüft wird, auf Deutsch und Englisch, und auf welche Norm oder welchen Paragraphen sich der Punkt jeweils bezieht. 49 Einträge von insgesamt 89 möglichen Befunden.
 
 Das ist keine Rechtsberatung und kein Scanner. Berichtet wird, ob ein technisches Merkmal vorhanden ist oder nicht. Ob daraus im Einzelfall eine Pflichtverletzung folgt, entscheidet das nicht.
 
@@ -57,4 +57,4 @@ The data in `checks.json` and this README are licensed under [CC BY 4.0](https:/
 
 ## Regenerating
 
-`checks.json` is generated from the catalogue behind `deckproof.dev/checks`. If a check changes there, this file is regenerated, not edited by hand.
+Both files are generated from the catalogue behind `deckproof.dev/checks` by `scripts/build-checks-json.mjs` in the Deckproof repository. If a check changes there, they are regenerated, not edited by hand.

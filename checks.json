@@ -4,8 +4,8 @@
   "source": "https://deckproof.dev/checks",
   "license": "CC-BY-4.0",
   "generated": "2026-09-17",
-  "total_finding_ids": 84,
-  "explained_here": 44,
+  "total_finding_ids": 89,
+  "explained_here": 49,
   "checks": [
     {
       "id": "A-01",
@@ -248,6 +248,21 @@
       }
     },
     {
+      "id": "T-02d",
+      "category": "security",
+      "severity": "medium",
+      "standard": "CWE-693",
+      "slug": "csp-without-script-src",
+      "en": {
+        "title": "Your Content-Security-Policy says nothing about scripts",
+        "what": "You send a CSP, but it sets no script rule at all. Against an injected script it protects you exactly as much as having no CSP, so it counts the same."
+      },
+      "de": {
+        "title": "Deine Content-Security-Policy sagt nichts über Skripte",
+        "what": "Du schickst eine CSP, aber sie setzt überhaupt keine Skriptregel. Gegen ein eingeschleustes Skript schützt sie dich damit genau so viel wie keine CSP, deshalb zählt sie auch gleich."
+      }
+    },
+    {
       "id": "T-01",
       "category": "security",
       "severity": "medium",
@@ -308,6 +323,21 @@
       }
     },
     {
+      "id": "T-10",
+      "category": "security",
+      "severity": "low",
+      "standard": "RFC 9110",
+      "slug": "duplicate-security-header",
+      "en": {
+        "title": "Security header sent twice with different values",
+        "what": "Your app and the proxy or CDN in front of it both set the same protection header and disagree about it. Browsers do not merge the two, each picks one, so what protects your visitors is not what you configured."
+      },
+      "de": {
+        "title": "Sicherheits-Header zweimal mit verschiedenen Werten",
+        "what": "Deine Anwendung und der davor liegende Proxy oder das CDN setzen denselben Schutz-Header und sind sich uneinig. Browser führen die beiden nicht zusammen, jeder greift sich einen heraus. Es schützt also nicht das, was du eingestellt hast."
+      }
+    },
+    {
       "id": "DE-SEC-01",
       "category": "security",
       "severity": "critical",
@@ -320,6 +350,21 @@
       "de": {
         "title": "Kein Schloss",
         "what": "Nicht über HTTPS ausgeliefert, oder das Zertifikat ist abgelaufen oder nicht vertrauenswürdig. Das zuerst, alles andere wartet."
+      }
+    },
+    {
+      "id": "Q-16",
+      "category": "quality",
+      "severity": "low",
+      "standard": "Scan coverage",
+      "slug": "probe-unanswered",
+      "en": {
+        "title": "A file could not be checked",
+        "what": "Our own request for robots.txt, sitemap.xml or the favicon got no answer, so we say that instead of claiming the file is missing. Costs no points."
+      },
+      "de": {
+        "title": "Eine Datei konnte nicht geprüft werden",
+        "what": "Unsere eigene Anfrage nach robots.txt, sitemap.xml oder dem Favicon blieb unbeantwortet. Dann sagen wir das, statt zu behaupten, die Datei fehle. Kostet keine Punkte."
       }
     },
     {
@@ -350,6 +395,36 @@
       "de": {
         "title": "Keine Datenschutzerklärung gefunden",
         "what": "Das EU-Recht erwartet eine (Art. 13 DSGVO). Wir suchen unter den üblichen Adressen und in den Links der Seite. Allgemeine Information, keine Rechtsberatung."
+      }
+    },
+    {
+      "id": "DE-IMP-04",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "§5 DDG",
+      "slug": "impressum-client-rendered",
+      "en": {
+        "title": "Impressum is empty until JavaScript runs",
+        "what": "The Impressum page exists, but the server sends it almost empty and the details only appear once JavaScript has run. With JavaScript off, in an archive, or to an automated check the page reads as blank. General information, not legal advice."
+      },
+      "de": {
+        "title": "Impressum ist ohne JavaScript leer",
+        "what": "Die Impressumsseite gibt es, aber der Server liefert sie fast leer aus, die Angaben erscheinen erst, wenn JavaScript gelaufen ist. Ohne JavaScript, im Archiv oder für eine automatische Prüfung wirkt die Seite leer. Allgemeine Information, keine Rechtsberatung."
+      }
+    },
+    {
+      "id": "DE-PRIV-05",
+      "category": "legal",
+      "severity": "medium",
+      "standard": "Art. 12 DSGVO",
+      "slug": "privacy-client-rendered",
+      "en": {
+        "title": "Privacy policy text is not in the page the server sends",
+        "what": "The privacy page exists, but the server sends the frame without the policy text in it: it appears only after JavaScript runs, so we cannot read it and neither can a visitor with JavaScript off. We say so instead of guessing what it contains. General information, not legal advice."
+      },
+      "de": {
+        "title": "Datenschutztext steht nicht in der ausgelieferten Seite",
+        "what": "Die Datenschutzseite gibt es, aber ihr Text erscheint erst, wenn JavaScript gelaufen ist. Wir können sie dann nicht lesen und ein Besucher ohne JavaScript auch nicht. Wir sagen das, statt zu raten, was drinsteht. Allgemeine Information, keine Rechtsberatung."
       }
     },
     {
