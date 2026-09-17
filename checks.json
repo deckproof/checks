@@ -3,7 +3,7 @@
   "description": "The checks Deckproof explains publicly, with the standard or law each one points at. English and German.",
   "source": "https://deckproof.dev/checks",
   "license": "CC-BY-4.0",
-  "generated": "2026-09-15",
+  "generated": "2026-09-17",
   "total_finding_ids": 84,
   "explained_here": 44,
   "checks": [
@@ -15,11 +15,11 @@
       "slug": "supabase-rls-anon-read",
       "en": {
         "title": "Anyone can read your database",
-        "what": "Your Supabase table answers to anyone who asks, no login needed. That is your users' data, readable by strangers. We ask once, read-only, and report what came back."
+        "what": "Your Supabase table answers to anyone who asks, no login needed. That is your users' data, readable by strangers. We ask once for a count only, never for a row, and report what came back."
       },
       "de": {
         "title": "Jeder kann deine Datenbank lesen",
-        "what": "Deine Supabase-Tabelle antwortet jedem, der fragt, ganz ohne Login. Das sind die Daten deiner Nutzer, lesbar für Fremde. Wir fragen einmal, rein lesend, und berichten, was zurückkam."
+        "what": "Deine Supabase-Tabelle antwortet jedem, der fragt, ganz ohne Login. Das sind die Daten deiner Nutzer, lesbar für Fremde. Wir fragen einmal nur die Zeilenzahl ab, nie eine Zeile, und berichten, was zurückkam."
       }
     },
     {
